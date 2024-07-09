@@ -21,7 +21,10 @@ jobs:
           python-version: '3.x'
 
       - name: Zainstaluj zależności
-        run: pip install -r requirements.txt
+        run: |
+          pip install pyinstaller
+          pip install pyyaml
+          pip install xmltodict
 
       - name: Zbuduj plik wykonywalny
         run: pyinstaller --onefile project.py
